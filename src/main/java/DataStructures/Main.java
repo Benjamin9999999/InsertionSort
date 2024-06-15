@@ -4,14 +4,20 @@ package DataStructures;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        int [] nums = {10,1,9,2,8,3,7,4,6,5,20,11,19,12,18,13,17,14,16,15};
+        int size = nums.length;
+        for(int i=0; i<size; i++){
+            int key = nums[i];
+            int j =i-1;
+            while(j>=0 && nums[j]>key){
+                nums[j+1]= nums[j];
+                j--;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+            }
+            nums[j+1]= key;
+        }
+        for(int num:nums){
+            System.out.print(num+" ");
         }
     }
 }
